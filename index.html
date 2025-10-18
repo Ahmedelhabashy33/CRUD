@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="webfonts/all.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="w-75 mx-auto my-5">
+      <div class="form-floating mb-4">
+        <input
+          oninput="validateinputs(this)"
+          type="text"
+          class="form-control"
+          id="productName"
+          placeholder="name@example.com"
+        />
+        <div class="alert alert-danger p-2 mt-2 d-none">
+          product name must start capital char then 2-10 chars
+        </div>
+        <label for="productName">Product Name</label>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input
+          oninput="validateinputs(this)"
+          type="number"
+          class="form-control"
+          id="productPrice"
+          placeholder="name@example.com"
+        />
+        <div class="alert alert-danger p-2 mt-2 d-none">
+          product price must be > 10
+        </div>
+        <label for="productPrice">Product Price</label>
+      </div>
+      <div class="form-floating mb-4">
+        <input
+          oninput="validateinputs(this)"
+          list="list"
+          type="text"
+          class="form-control"
+          id="productCategory"
+          placeholder="name@example.com"
+        />
+        <div class="alert alert-danger p-2 mt-2 d-none">
+          product Category must be tv or mobile or screen or laptop
+        </div>
+        <label for="productCategory">Product Category</label>
+        <datalist id="list">
+          <option value="screen"></option>
+          <option value="tv"></option>
+          <option value="mobile"></option>
+          <option value="laptop"></option>
+        </datalist>
+      </div>
+      <div class="form-floating mb-4">
+        <textarea
+          oninput="validateinputs(this)"
+          class="form-control"
+          placeholder="name@example.com"
+          id="ProductDescrption"
+        ></textarea>
+        <div class="alert alert-danger p-2 mt-2 d-none">
+          product desc must be > 3 chars
+        </div>
+        <label for="floatingInput">Product Descrption</label>
+      </div>
+      <div class="form-floating mb-4">
+        <input
+          type="file"
+          class="form-control"
+          id="productImg"
+          placeholder="name@example.com"
+        />
+        <label for="productImg">upload Product Image</label>
+      </div>
+      <button onclick="addProduct()" id="add" class="btn btn-primary btn-lg">
+        Add Product
+      </button>
+      <button
+        onclick="update()"
+        class="btn btn-warning btn-lg d-none"
+        id="update"
+      >
+        update product
+      </button>
+      <input
+        oninput="search()"
+        id="search"
+        type="search"
+        class="form-control my-3"
+      />
+    </div>
+
+    <div class="contaniar my-5">
+      <div class="row w-75 m-auto" id="myRow"></div>
+    </div>
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
